@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<% for(var i=0; i<books.length; i++){ %>
+		
+		<p><%= books[i].author %></p>
+		<p><%= books[i].published_date %></p>
+		<a href="/api/books/<%= books[i]._id%>">show one</a>
+		<a href="/api/books/<%= books[i]._id%>/update">update</a>
+		<a href="/api/books/<%= books[i]._id%>/delete">delete</a>
+
+	<% } %>
+
+	<form action="/api/books" method="post">
+		<input type="text" name="title" placeholder="title" />
+		<input type="text" name="author" placeholder="author" />
+		<input type="date" name="published_date" />
+		<input type="submit" value="send" />
+	</form>
+</body>
+</html>
